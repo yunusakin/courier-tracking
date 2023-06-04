@@ -3,7 +3,23 @@ package com.yunusakin.couriertracking.util;
 public class GeoUtil {
     /**
      * This method uses The Haversine formula to calculate the distance between two locations on Earth.
-     *  it returns distance between locations in meters
+     * Haversine Formula :
+     * a = sin²(Δφ/2) + cos(φ₁) * cos(φ₂) * sin²(Δλ/2)
+     * c = 2 * atan2(√a, √(1-a))
+     * d = R * c
+     *
+     * Explanation *
+     *
+     * φ₁ and φ₂ are the latitudes of the two points.
+     * Δφ is the difference between the latitudes.
+     * Δλ is the difference between the longitudes.
+     * R is the radius of the Earth (approximately 6,371 kilometers).
+     * a, c, and d are intermediate variables used in the calculation.
+     * d is the final distance between the two points.
+     * /
+
+     /**
+     * it returns distance between locations in meters
      */
     public static double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
 

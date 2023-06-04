@@ -10,7 +10,7 @@ public class CourierLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "TIME")
+    @Column(name = "DATE")
     private LocalDateTime time;
 
     @Column(name = "LATITUDE")
