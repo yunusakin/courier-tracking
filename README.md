@@ -179,4 +179,6 @@ To get started with the project, follow these steps:
   * store: Store
 # Data Access
   * For accessing stored data in H2 Database http://localhost:8182/ct/h2-panel 
+  * Datasource user : ct 
+  * Datasource password : null
 
