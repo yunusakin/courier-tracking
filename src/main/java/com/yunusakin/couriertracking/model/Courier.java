@@ -1,23 +1,34 @@
 package com.yunusakin.couriertracking.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "COURIER")
 public class Courier {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "UUID")
-    private String courierToken;
+    @Column(name = "NAME")
+    private String name;
 
-    @Column(name = "PHONE_NUMBER")
-    private String phoneNumber;
+    @Column(name = "TOKEN")
+    private String token;
 
-    @Column(name = "EMAIL")
-    private String email;
+
+    @OneToMany(mappedBy = "courier")
+    private List<CourierLog> courierLogs;
+
+    public Courier() {
+    }
+
+    public Courier(Long id, String name, String token) {
+        this.id = id;
+        this.name = name;
+        this.token = token;
+    }
 
     public Long getId() {
         return id;
@@ -27,27 +38,27 @@ public class Courier {
         this.id = id;
     }
 
-    public String getCourierToken() {
-        return courierToken;
+    public String getName() {
+        return name;
     }
 
-    public void setCourierToken(String courierToken) {
-        this.courierToken = courierToken;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getToken() {
+        return token;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setToken(String token) {
+        this.token = token;
     }
 
-    public String getEmail() {
-        return email;
+    public List<CourierLog> getCourierLogs() {
+        return courierLogs;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCourierLogs(List<CourierLog> courierLogs) {
+        this.courierLogs = courierLogs;
     }
 }

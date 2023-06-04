@@ -27,7 +27,6 @@ public class ResponseUtil {
     public static ResponseEntity<Object> successHttpResponse(Object responseObject) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("success",true);
-        map.put("status", HttpStatus.OK.value());
         map.put("response", responseObject);
         return new ResponseEntity<Object>(map,HttpStatus.OK);
     }
