@@ -1,4 +1,4 @@
-# Courier Tracking System
+# Courier Tracking 
 
 This is a RESTful web application built with Spring Boot that tracks the geolocation of couriers and logs their activities when they enter the vicinity of specific stores. 
 The application allows querying the total travel distance of couriers.
